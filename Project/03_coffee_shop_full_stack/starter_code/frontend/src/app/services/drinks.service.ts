@@ -83,6 +83,7 @@ export class DrinksService {
   constructor(private auth: AuthService, private http: HttpClient) { }
 
   getHeaders() {
+    console.log('activeJWT', this.auth.activeJWT());
     const header = {
       headers: new HttpHeaders()
         .set('Authorization',  `Bearer ${this.auth.activeJWT()}`)
